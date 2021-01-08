@@ -1,8 +1,7 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Helmet } from 'react-helmet';
-import { useStaticQuery, graphql } from 'gatsby';
-
+import React from "react";
+import PropTypes from "prop-types";
+import { Helmet } from "react-helmet";
+import { useStaticQuery, graphql } from "gatsby";
 
 const Meta = ({ description, lang, meta, title }) => {
   const { site } = useStaticQuery(
@@ -19,7 +18,7 @@ const Meta = ({ description, lang, meta, title }) => {
   );
 
   const baseTitle = site.siteMetadata.title;
-  const metaDescription = description || site.siteMetadata.description
+  const metaDescription = description || site.siteMetadata.description;
 
   return (
     <Helmet
@@ -60,7 +59,7 @@ const Meta = ({ description, lang, meta, title }) => {
         },
       ].concat(meta)}
     />
-  )
+  );
 };
 
 Meta.defaultProps = {

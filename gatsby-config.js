@@ -12,7 +12,7 @@ module.exports = {
           google: [
             {
               family: `Archivo`,
-              variants: [`400`, `400i`, `700`, `700i`]
+              variants: [`400`, `400i`, `700`, `700i`],
             },
           ],
         },
@@ -23,8 +23,8 @@ module.exports = {
       resolve: `@danbruegge/gatsby-plugin-stylelint`,
       options: {
         files: `${__dirname}/src/**/*.scss`,
-        syntax: 'scss',
-      }
+        syntax: "scss",
+      },
     },
     `gatsby-plugin-react-helmet`,
     {
