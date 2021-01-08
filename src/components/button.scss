@@ -1,0 +1,67 @@
+@import '../styles/shared';
+
+
+.button {
+  $icon-space: 0.3em;
+
+  align-items: center;
+  border: 1px solid $color-accent;
+  color: $color-accent;
+  cursor: pointer;
+  display: inline-flex;
+  font-size: get-rems(14px);
+  font-weight: 700;
+  height: get-rems(30px);
+  padding: 0 get-v-rhythm(0.5);
+  user-select: none;
+  white-space: nowrap;
+
+  &__main {
+    align-items: center;
+    display: flex;
+  }
+
+  .svg-icon {
+    path,
+    polygon {
+      fill: $color-accent;
+    }
+  }
+
+  .svg-icon + span {
+    margin-right: $icon-space;
+  }
+  span + .svg-icon {
+    margin-left: $icon-space;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: $color-bg-control-light;
+  }
+
+  &:active {
+    border-color: $color-accent-dark;
+    color: $color-accent-dark;
+
+    .svg-icon {
+      path,
+      polygon {
+        fill: $color-accent-dark;
+      }
+    }
+  }
+
+  &--big {
+    font-size: get-rems(21px);
+    height: get-rems(50px);
+    padding: 0 get-v-rhythm(2);
+
+    .svg-icon {
+      $size: get-rems(24px);
+      height: $size;
+      width: $size;
+    }
+
+  }
+}

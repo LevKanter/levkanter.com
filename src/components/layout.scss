@@ -1,0 +1,7 @@
+@import '../styles/shared';
+
+.layout {
+  background-color: $color-bright;
+  margin: auto;
+  max-width: get-rems(2000px);
+}

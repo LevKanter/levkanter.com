@@ -1,0 +1,41 @@
+@import '../../styles/shared';
+
+.res-media-controls {
+  font-size: get-rems(14px);
+  margin: 0 10px;
+
+  &__item-list {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  &__item {
+    margin: 1px
+  }
+
+  &__item-button {
+    background-color: darken($color-bg-control, 5%);
+    color: fade-out($color-txt, 0.7);
+    display: inline-flex;
+    padding: 0.5em get-v-rhythm(2);
+
+    &:hover,
+    &:focus {
+      background-color: $color-bg-control-light;
+    }
+
+    &:hover {
+      color: $color-accent;
+    }
+
+    &:active {
+      color: $color-accent-dark;
+    }
+
+    .res-media-controls__item--active & {
+      color: $color-txt;
+    }
+  }
+}

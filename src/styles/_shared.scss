@@ -1,0 +1,106 @@
+//
+// Media queries
+//
+
+$media-queries: (
+  'large': ('screen and (min-width: 1281px)'),
+  'full': ('screen and (min-width: 1081px)'),
+  'below-full': ('screen and (max-width: 1080px)'),
+  'medium': ('screen and (max-width: 1080px) and (min-width: 761px)'),
+  'below-medium': ('screen and (max-width: 760px)'),
+  'above-small': ('screen and (min-width: 761px)'),
+  'small': ('screen and (max-width: 760px) and (min-width: 421px)'),
+  'above-tiny': ('screen and (min-width: 421px)'),
+  'tiny': ('screen and (max-width: 420px)')
+);
+
+@mixin media-query($name) {
+  $raw-query: map-get($media-queries, $name);
+
+  @if $raw-query {
+    $query: if(type-of($raw-query) == 'string', unquote($raw-query), inspect($raw-query));
+
+    @media #{$query} {
+      @content;
+    }
+  } @else {
+    @error 'No entry found in `$media-queries` map for `#{name}`.';
+  }
+}
+
+
+//
+// Layout utils
+//
+
+@function get-rems ($px) {
+  @return $px / (16px / 1rem);
+}
+
+@function get-v-rhythm ($multiplier: 1) {
+  @return 1.4rem * $multiplier;
+}
+
+@mixin v-rhythm ($multiplier: 1, $reverse: false) {
+  @if $reverse {
+    margin-top: get-v-rhythm($multiplier);
+
+    &:first-child {
+      margin-top: 0;
+    }
+  } @else {
+    margin-bottom: get-v-rhythm($multiplier);
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+@mixin visually-hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+$layers: (
+  header,
+  HUD
+);
+
+@mixin z-index ($layer) {
+  z-index: #{index($layers, $layer) + 1000};
+}
+
+@mixin horizontal-touch-scroll {
+  -webkit-overflow-scrolling: touch;
+  overflow-x: auto;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+
+//
+// Color palette
+//
+
+$color-bg: #111111;
+$color-bg-control: #15202b;
+$color-bg-control-light: lighten($color-bg-control, 5%);
+$color-bg-contrast: #555555;
+$color-bg-dark: #000000;
+$color-txt: #f5f5f5;
+$color-bright: fade-out($color-txt, 0.9);
+$color-bright-light: fade-out($color-txt, 0.8);
+$color-bright-dark: fade-out($color-txt, 0.85);
+$color-accent: #1da1f2;
+$color-accent-dark: darken($color-accent, 10%);
+$color-highlight: #008b8b;

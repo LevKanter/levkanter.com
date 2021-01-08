@@ -1,0 +1,34 @@
+@import '../styles/shared';
+
+.links-block {
+  $spacing: 1px;
+  
+  &__list {
+    display: flex;
+    flex-direction: column;
+    margin: -1 * $spacing;
+  }
+
+  &__item {
+    padding: $spacing;
+  }
+
+  &__link {
+    background-color: $color-bg-control;
+    display: block;
+    padding: get-v-rhythm(0.8) get-v-rhythm(2);
+
+    &:hover,
+    &:focus {
+      background-color: $color-bg-control-light;
+    }
+
+    &:hover {
+      color: $color-accent;
+    }
+
+    &:active {
+      color: $color-accent-dark;
+    }
+  }
+}

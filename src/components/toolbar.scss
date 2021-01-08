@@ -1,0 +1,19 @@
+@import '../styles/shared';
+
+.toolbar {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+
+  &__group {
+    margin: 0 get-v-rhythm(0.5);
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}

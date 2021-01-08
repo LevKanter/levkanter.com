@@ -1,0 +1,7 @@
+@import '../styles/shared';
+
+.svg-icon {
+  $size: get-rems(20px);
+  height: $size;
+  width: $size;
+}

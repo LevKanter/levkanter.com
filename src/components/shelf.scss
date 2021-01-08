@@ -1,0 +1,28 @@
+@import '../styles/shared';
+
+.shelf {
+  padding: 4vw 8vw;
+
+  &--bright {
+    background-color: $color-bright;
+  }
+
+  &--header {
+    h1 {
+      font-size: get-rems(28px);
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .toolbar {
+      margin: get-v-rhythm(0.5) auto 0;
+      width: fit-content;
+    }
+  }
+
+  @include media-query(below-full) {
+    padding-bottom: 8vw;
+    padding-top: 8vw;
+  }
+
+}

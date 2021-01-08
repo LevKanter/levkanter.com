@@ -1,0 +1,90 @@
+@import '../styles/shared';
+
+.titlebar {
+  @include z-index(header);
+  background-color: $color-bg-dark;
+  font-size: get-rems(18px);
+  position: sticky;
+  top: 0;
+
+  &__nav {
+    align-items: stretch;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+  }
+
+  &__nav-item {
+    align-items: center;
+    display: flex;
+    padding: get-v-rhythm(0.5);
+
+    .svg-icon path {
+      fill: lighten($color-txt, 50%);
+    }
+  }
+
+  &__link {
+    &:hover,
+    &:focus {
+      background-color: $color-bg-control-light;
+    }
+
+    &:hover {
+      color: $color-accent;
+
+      .svg-icon path {
+        fill: $color-accent;
+      }
+    }
+
+    &:active {
+      color: $color-accent-dark;
+
+      .svg-icon path {
+        fill: $color-accent-dark;
+      }
+    }
+  }
+
+  &__subnav {
+    @include z-index(HUD);
+    position: absolute;
+    right: 0;
+    top: 100%;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 100ms ease-out;
+
+    @at-root .titlebar--subnav-open #{&} {
+      transform: scaleX(1);
+    }
+  }
+
+  &__subnav-list {
+    align-items: flex-end;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__subnav-item {
+    background-color: darken($color-bg-control, 5%);
+    margin: 1px 0 0;
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    .titlebar__link {
+      display: block;
+      padding: 0.5em get-v-rhythm(2);
+      transition: padding 100ms ease-out;
+
+      &:hover,
+      &:focus {
+        padding-left: get-v-rhythm(3);
+        padding-right: get-v-rhythm(3);
+      }
+    }
+  }
+}

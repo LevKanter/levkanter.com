@@ -1,0 +1,84 @@
+@import '../styles/shared';
+
+.resume {
+  h2 {
+    @include v-rhythm(0.5);
+    font-size: get-rems(24px);
+    font-weight: 700;
+
+    a {
+      &:hover,
+      &:focus {
+        text-decoration: underline;
+      }
+
+      &:active {
+        opacity: 0.6;
+      }
+    }
+  }
+
+  h3 {
+    font-size: get-rems(21px);
+    font-weight: 700;
+  }
+
+  &__item {
+    align-items: center;
+    background-color: $color-bright;
+    display: flex;
+    flex-direction: column;
+    margin-top: 2px;
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    .text-block {
+      box-sizing: content-box;
+      padding: get-v-rhythm();
+    }
+  }
+
+  &__item-header {
+    align-items: center;
+    background-color: $color-bright;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    padding: get-v-rhythm();
+    width: 100%;
+
+    &:hover,
+    &:focus {
+      background-color: $color-bright-light;
+    }
+    &:active {
+      background-color: $color-bright-dark;
+      color: darken($color-txt, 20%);
+    }
+
+    @include media-query(below-medium) {
+      align-items: flex-start;
+      flex-direction: column;
+    }
+  }
+
+  &__meta-holder {
+    @include media-query(below-medium) {
+      @include horizontal-touch-scroll;
+      margin: get-v-rhythm(0.5) 0 0;
+      width: calc(100% + #{get-v-rhythm()});
+    }
+  }
+
+  &__item-body {
+    width: 100%;
+  }
+}
+
+@include media-query(below-medium) {
+  .resume__section.shelf {
+    padding-top: 12vw;
+  }
+}

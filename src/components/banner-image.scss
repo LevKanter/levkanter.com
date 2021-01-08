@@ -1,0 +1,9 @@
+@import '../styles/shared';
+
+.banner-image {
+  @include horizontal-touch-scroll;
+
+  &__main {
+    min-width: 1400px;
+  }
+}

@@ -1,0 +1,90 @@
+@import '../styles/shared';
+
+.text-block {
+  font-size: get-rems(21px);
+  line-height: 1.4;
+  margin: auto;
+  max-width: 39em;
+  
+  p,
+  ol,
+  ul,
+  dl,
+  table,
+  blockquote {
+    @include v-rhythm;
+  }
+
+  li {
+    @include v-rhythm(0.5);
+
+    ol,
+    ul {
+      padding-left: 1em;
+    }
+  }
+
+  ul {
+    li {
+      &::before {
+        color: darken($color-txt, 50%);
+        content: '\2023';
+        float: left;
+        margin-left: -0.7em;
+      }
+    }
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @include v-rhythm(0.5);
+    @include v-rhythm(1.5, true);
+    font-weight: 700;
+  }
+
+  h2 {
+    font-size: 1.33em;
+  }
+
+  h3 {
+    font-size: 1.1em;
+  }
+
+  p {
+    a {
+      text-decoration: underline;
+      text-decoration-color: $color-accent;
+
+      &:focus,
+      &:hover {
+        color: $color-accent;
+      }
+
+      &:active {
+        color: $color-accent-dark;
+        text-decoration-color: $color-accent-dark;
+      }
+    }
+
+    strong {
+      font-weight: 700;
+    }
+
+    em {
+      font-style: italic;
+    }
+  }
+
+  small {
+    font-size: 75%;
+    font-style: italic;
+  }
+
+  @include media-query(below-medium) {
+    font-size: get-rems(18px);
+  }
+}
