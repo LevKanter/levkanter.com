@@ -9,7 +9,7 @@ import MenuIcon from "./icons/menu";
 import CloseIcon from "./icons/close";
 
 const TitleBar = () => {
-  const meta = useStaticQuery(graphql`
+  const data = useStaticQuery(graphql`
     query {
       site {
         siteMetadata {
@@ -40,7 +40,7 @@ const TitleBar = () => {
           className="titlebar__nav-item titlebar__link"
           activeClassName="titlebar__link--active"
         >
-          {meta.site.siteMetadata.title}
+          {data.site.siteMetadata.title}
         </Link>
         <button
           className="titlebar__nav-item titlebar__link"

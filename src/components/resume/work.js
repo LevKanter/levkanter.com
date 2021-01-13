@@ -81,7 +81,7 @@ Work.defaultProps = {
 const fragments = graphql`
   fragment workScreenshot on File {
     childImageSharp {
-      fluid(maxWidth: 1600, quality: 100) {
+      fluid(maxWidth: 900, quality: 100) {
         ...GatsbyImageSharpFluid
       }
     }

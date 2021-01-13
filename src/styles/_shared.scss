@@ -3,28 +3,28 @@
 //
 
 $media-queries: (
-  'large': ('screen and (min-width: 1281px)'),
-  'full': ('screen and (min-width: 1081px)'),
-  'below-full': ('screen and (max-width: 1080px)'),
-  'medium': ('screen and (max-width: 1080px) and (min-width: 761px)'),
-  'below-medium': ('screen and (max-width: 760px)'),
-  'above-small': ('screen and (min-width: 761px)'),
-  'small': ('screen and (max-width: 760px) and (min-width: 421px)'),
-  'above-tiny': ('screen and (min-width: 421px)'),
-  'tiny': ('screen and (max-width: 420px)')
+  "large": ("screen and (min-width: 1281px)"),
+  "full": ("screen and (min-width: 1081px)"),
+  "below-full": ("screen and (max-width: 1080px)"),
+  "medium": ("screen and (max-width: 1080px) and (min-width: 761px)"),
+  "below-medium": ("screen and (max-width: 760px)"),
+  "above-small": ("screen and (min-width: 761px)"),
+  "small": ("screen and (max-width: 760px) and (min-width: 421px)"),
+  "above-tiny": ("screen and (min-width: 421px)"),
+  "tiny": ("screen and (max-width: 420px)")
 );
 
 @mixin media-query($name) {
   $raw-query: map-get($media-queries, $name);
 
   @if $raw-query {
-    $query: if(type-of($raw-query) == 'string', unquote($raw-query), inspect($raw-query));
+    $query: if(type-of($raw-query) == "string", unquote($raw-query), inspect($raw-query));
 
     @media #{$query} {
       @content;
     }
   } @else {
-    @error 'No entry found in `$media-queries` map for `#{name}`.';
+    @error "No entry found in `$media-queries` map for `#{name}`.";
   }
 }
 

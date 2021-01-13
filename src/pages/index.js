@@ -1,31 +1,9 @@
 import React from "react";
-import { useStaticQuery, graphql } from "gatsby";
 
 import Layout from "../components/layout";
-import BannerImage from "../components/banner-image";
+import Hero from "../components/home/hero";
 import Shelf from "../components/shelf";
 import LinksBlock from "../components/links-block";
-
-const Hero = () => {
-  const { image } = useStaticQuery(graphql`
-    query {
-      image: file(relativePath: { eq: "art/profiles-1.png" }) {
-        childImageSharp {
-          fluid(maxWidth: 2000, quality: 100) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-    }
-  `);
-
-  return (
-    <BannerImage
-      fluid={image.childImageSharp.fluid}
-      alt='Artwork: "Profiles 1"'
-    />
-  );
-};
 
 export default () => (
   <Layout>

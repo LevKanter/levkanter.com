@@ -1,0 +1,11 @@
+@import "../styles/shared";
+
+.concrete-block {
+  overflow: hidden;
+
+  &__row {
+    font-size: get-rems(14px);
+    text-align: center;
+    white-space: nowrap;
+  }
+}

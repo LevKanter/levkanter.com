@@ -332,7 +332,7 @@ export default () => (
   <Layout title="Résumé">
     <article className="resume">
       <Shelf Tag="header" variants={["header"]}>
-        <h1>Lev Kanter &mdash; Résumé</h1>
+        <h1>Résumé</h1>
         <Toolbar>
           <Toolbar.Group>Last updated: 01/2021</Toolbar.Group>
           <Toolbar.Group>

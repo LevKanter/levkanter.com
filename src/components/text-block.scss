@@ -1,4 +1,4 @@
-@import '../styles/shared';
+@import "../styles/shared";
 
 .text-block {
   font-size: get-rems(21px);
@@ -28,7 +28,7 @@
     li {
       &::before {
         color: darken($color-txt, 50%);
-        content: '\2023';
+        content: "\2023";
         float: left;
         margin-left: -0.7em;
       }
