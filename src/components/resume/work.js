@@ -78,7 +78,9 @@ Work.defaultProps = {
   linkLabel: "Live Site",
 };
 
-const fragments = graphql`
+export default Work;
+
+export const fragments = graphql`
   fragment workScreenshot on File {
     childImageSharp {
       fluid(maxWidth: 900, quality: 100) {
@@ -87,7 +89,3 @@ const fragments = graphql`
     }
   }
 `;
-
-export default Work;
-
-export { fragments };

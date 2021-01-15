@@ -56,18 +56,7 @@
 
   p {
     a {
-      text-decoration: underline;
-      text-decoration-color: $color-accent;
-
-      &:focus,
-      &:hover {
-        color: $color-accent;
-      }
-
-      &:active {
-        color: $color-accent-dark;
-        text-decoration-color: $color-accent-dark;
-      }
+      @include text-link;
     }
 
     strong {

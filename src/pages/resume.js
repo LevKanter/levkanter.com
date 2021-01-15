@@ -1,6 +1,7 @@
 import "./resume.scss";
 
 import React, { useState, useRef, useEffect } from "react";
+import { Link } from "gatsby";
 import classNames from "classnames";
 
 import { slugify } from "../utils/text";
@@ -291,8 +292,8 @@ const EducationSection = () => (
         <TextBlock>
           <p>
             I majored in interaction design and digital art. For my thesis, I
-            designed and developed software that enables users to create digital
-            paintings using a{" "}
+            designed and developed software that enables users to create{" "}
+            <Link to="/wildgarden/">digital paintings</Link> using a{" "}
             <a href="https://en.wikipedia.org/wiki/Wii_Remote">
               Nintendo Wii Remote
             </a>

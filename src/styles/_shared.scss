@@ -104,3 +104,22 @@ $color-bright-dark: fade-out($color-txt, 0.85);
 $color-accent: #1da1f2;
 $color-accent-dark: darken($color-accent, 10%);
 $color-highlight: #008b8b;
+
+//
+// Typography utils
+//
+
+@mixin text-link {
+  text-decoration: underline;
+  text-decoration-color: $color-accent;
+
+  &:focus,
+  &:hover {
+    color: $color-accent;
+  }
+
+  &:active {
+    color: $color-accent-dark;
+    text-decoration-color: $color-accent-dark;
+  }
+}

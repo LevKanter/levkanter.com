@@ -18,3 +18,13 @@ BannerImage.propTypes = {
 };
 
 export default BannerImage;
+
+export const fragments = graphql`
+  fragment bannerImage on File {
+    childImageSharp {
+      fluid(maxWidth: 2000, quality: 100) {
+        ...GatsbyImageSharpFluid
+      }
+    }
+  }
+`;

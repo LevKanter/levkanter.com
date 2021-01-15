@@ -14,6 +14,16 @@
       text-align: center;
     }
 
+    p {
+      margin: get-v-rhythm(0.5) auto 0;
+      text-align: center;
+      width: fit-content;
+
+      a {
+        @include text-link;
+      }
+    }
+
     .toolbar {
       margin: get-v-rhythm(0.5) auto 0;
       width: fit-content;

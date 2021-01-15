@@ -58,6 +58,11 @@ const TitleBar = () => {
         >
           <ul className="titlebar__subnav-list">
             <li className="titlebar__subnav-item">
+              <Link to="/wildgarden" className="titlebar__link">
+                WildGarden
+              </Link>
+            </li>
+            <li className="titlebar__subnav-item">
               <Link to="/resume" className="titlebar__link">
                 Résumé
               </Link>

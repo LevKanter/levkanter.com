@@ -1,0 +1,18 @@
+@import "../styles/shared";
+
+.comp-frame {
+  max-width: get-rems(1000px);
+
+  &__main {
+    background-color: $color-bright;
+    padding: 2px;
+  }
+
+  &--alt1 {
+    margin: auto;
+  }
+
+  &--alt2 {
+    margin-left: auto;
+  }
+}

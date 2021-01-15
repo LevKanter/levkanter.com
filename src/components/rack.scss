@@ -1,0 +1,10 @@
+@import "../styles/shared";
+
+.rack {
+  .shelf {
+    @include media-query(below-medium) {
+      margin: 1px 0 0;
+      padding: 0;
+    }
+  }
+}

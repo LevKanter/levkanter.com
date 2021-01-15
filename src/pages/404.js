@@ -6,7 +6,7 @@ import Toolbar from "../components/toolbar";
 import Button from "../components/button";
 import ConcreteBlock from "../components/concrete-block";
 
-const renderSkulls = () => {
+const Skulls = () => {
   var i, j, s;
   const rows = [];
 
@@ -37,6 +37,6 @@ export default () => (
         </Button>
       </Toolbar>
     </Shelf>
-    {renderSkulls()}
+    <Skulls />
   </Layout>
 );
