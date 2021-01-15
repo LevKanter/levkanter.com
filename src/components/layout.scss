@@ -4,4 +4,14 @@
   background-color: $color-bright;
   margin: auto;
   max-width: get-rems(2000px);
+
+  &__skipnav {
+    background-color: $color-bg-control-light;
+    color: $color-accent;
+    padding: get-v-rhythm(0.5);
+
+    &:not(:focus-within) {
+      @include visually-hidden;
+    }
+  }
 }

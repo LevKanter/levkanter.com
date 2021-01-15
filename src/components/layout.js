@@ -8,11 +8,16 @@ import PropTypes from "prop-types";
 import Meta from "./meta";
 import TitleBar from "./titlebar";
 
+const MAIN_ID = "main-content";
+
 const Layout = ({ title, children }) => (
   <div className="layout">
     <Meta title={title} />
+    <div className="layout__skipnav">
+      <a href={`#${MAIN_ID}`}>Skip to content</a>
+    </div>
     <TitleBar />
-    <main id="main-content">{children}</main>
+    <main id={MAIN_ID}>{children}</main>
   </div>
 );
 
