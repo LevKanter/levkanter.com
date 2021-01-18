@@ -1,0 +1,79 @@
+@import "../styles/shared";
+
+.slideshow {
+  height: 100%;
+  position: relative;
+  width: 100%;
+
+  &__viewport {
+    bottom: 0;
+    left: 50%;
+    position: absolute;
+    top: 0;
+    transform: translateX(-50%);
+    width: 75%;
+
+    @include media-query(below-medium) {
+      width: 100%;
+    }
+  }
+
+  &__img {
+    height: 100%;
+  }
+
+  &__nav-button {
+    $icon-size: get-rems(30px);
+
+    align-items: center;
+    background-color: $color-bg-control;
+    display: flex;
+    padding: get-v-rhythm(0.5) get-v-rhythm(2);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: padding 100ms ease-out;
+
+    .svg-icon {
+      height: $icon-size;
+      width: $icon-size;
+
+      polygon {
+        fill: lighten($color-txt, 50%);
+      }
+    }
+
+    &:hover,
+    &:focus {
+      background-color: $color-bg-control-light;
+      padding-left: get-v-rhythm(3);
+      padding-right: get-v-rhythm(3);
+    }
+
+    &:hover {
+      .svg-icon polygon {
+        fill: $color-accent;
+      }
+    }
+
+    &:active {
+      .svg-icon polygon {
+        fill: $color-accent-dark;
+      }
+    }
+
+    &--prev {
+      left: 0;
+    }
+
+    &--next {
+      right: 0;
+    }
+
+    @include media-query(below-medium) {
+      bottom: get-v-rhythm(0);
+      top: auto;
+      transform: none;
+    }
+  }
+}

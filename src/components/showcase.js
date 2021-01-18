@@ -28,7 +28,23 @@ const ShowcaseImg = (props) => (
   />
 );
 
+const ShowcaseItemButton = ({ children, action }) => (
+  <button className="showcase__item-button" onClick={action}>
+    {children}
+  </button>
+);
+
+ShowcaseItemButton.propTypes = {
+  children: PropTypes.node.isRequired,
+  action: PropTypes.func,
+};
+
+ShowcaseItemButton.defaultProps = {
+  action: () => {},
+};
+
 Showcase.Item = ShowcaseItem;
 Showcase.Img = ShowcaseImg;
+Showcase.ItemButton = ShowcaseItemButton;
 
 export default Showcase;

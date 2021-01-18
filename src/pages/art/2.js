@@ -62,7 +62,6 @@ export default () => {
             alt='Artwork: Spirit 4"'
           />
         </Showcase.Item>
-
         <Showcase.Item>
           <Showcase.Img
             fluid={imageData.spirit5.childImageSharp.fluid}

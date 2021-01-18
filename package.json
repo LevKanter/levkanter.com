@@ -4,7 +4,9 @@
   "description": "Lev Kanter's personal website",
   "author": "Lev Kanter <levkanter@gmail.com>",
   "dependencies": {
+    "body-scroll-lock": "^3.1.5",
     "classnames": "^2.2.6",
+    "focus-trap-react": "^8.3.2",
     "gatsby": "^2.21.22",
     "gatsby-image": "^2.4.3",
     "gatsby-plugin-manifest": "^2.4.2",

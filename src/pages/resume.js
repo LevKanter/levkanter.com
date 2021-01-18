@@ -82,7 +82,7 @@ const Item = ({ title, metaItems = [], slideDuration = 150, children }) => {
       className={classNames("resume__item", { "resume__item--open": isOpen })}
     >
       <header
-        role="tab"
+        role="button"
         className="resume__item-header"
         tabIndex="0"
         onClick={() => toggle()}

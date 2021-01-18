@@ -1,0 +1,71 @@
+@import "../styles/shared";
+
+.modal {
+  @include z-index(overlay);
+  background-color: $color-bg-dark;
+  bottom: 0;
+  display: none;
+  left: 0;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  pointer-events: none;
+  position: fixed;
+  right: 0;
+  top: 0;
+
+  &__main {
+    background-color: $color-bg-contrast;
+    margin: get-v-rhythm(2);
+    min-height: calc(100% - #{get-v-rhythm(4)});
+    position: relative;
+
+    .modal--gallery & {
+      height: calc(100% - #{get-v-rhythm(4)});
+    }
+
+    @include media-query(below-medium) {
+      margin: get-v-rhythm(0.5);
+      min-height: calc(100% - #{get-v-rhythm()});
+
+      .modal--gallery & {
+        height: calc(100% - #{get-v-rhythm()});
+      }
+    }
+  }
+
+  &__close-button {
+    align-items: center;
+    background-color: $color-bg-control;
+    display: flex;
+    padding: get-v-rhythm(0.5);
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    .svg-icon path {
+      fill: lighten($color-txt, 50%);
+    }
+
+    &:hover,
+    &:focus {
+      background-color: $color-bg-control-light;
+    }
+
+    &:hover {
+      .svg-icon path {
+        fill: $color-accent;
+      }
+    }
+
+    &:active {
+      .svg-icon path {
+        fill: $color-accent-dark;
+      }
+    }
+  }
+
+  &--open {
+    display: block;
+    pointer-events: auto;
+  }
+}
