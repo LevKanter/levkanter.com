@@ -37,7 +37,7 @@ SlideshowNext.propTypes = SlideshowPrev.propTypes = {
   action: PropTypes.func,
 };
 
-SlideshowNext.defaultProps = SlideshowPrev.propTypes = {
+SlideshowNext.defaultProps = SlideshowPrev.defaultProps = {
   action: () => {},
 };
 
