@@ -14,7 +14,7 @@
   top: 0;
 
   &__main {
-    background-color: $color-bg-contrast;
+    background-color: $color-bg;
     margin: get-v-rhythm(2);
     min-height: calc(100% - #{get-v-rhythm(4)});
     position: relative;
