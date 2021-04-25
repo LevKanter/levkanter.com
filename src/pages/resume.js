@@ -8,7 +8,6 @@ import { slugify } from "../utils/text";
 import Layout from "../components/layout";
 import Shelf from "../components/shelf";
 import Toolbar from "../components/toolbar";
-import Button from "../components/button";
 import TextBlock from "../components/text-block";
 import LinksBlock from "../components/links-block";
 import MetaList from "../components/resume/meta-list";
@@ -118,6 +117,23 @@ const Item = ({ title, metaItems = [], slideDuration = 150, children }) => {
 const WorkHistorySection = () => (
   <Section title="Work History">
     <ol>
+      <Item
+        title="Nearby"
+        metaItems={[
+          {
+            title: "Senior Software Engineer",
+            content: <>04/2021&ndash;present</>,
+          },
+        ]}
+      >
+        <TextBlock>
+          <p>
+            <a href="https://nearbyhq.com/">Nearby</a> is building a platform
+            for local online shopping. I joined as an early member of the
+            engineering team in 2021.
+          </p>
+        </TextBlock>
+      </Item>
       <Item
         title="Type/Code"
         metaItems={[
@@ -335,12 +351,7 @@ export default () => (
       <Shelf Tag="header" variants={["header"]}>
         <h1>Résumé</h1>
         <Toolbar>
-          <Toolbar.Group>Last updated: 01/2021</Toolbar.Group>
-          <Toolbar.Group>
-            <Button link="/resume.pdf" forceNativeLink={true}>
-              PDF Version
-            </Button>
-          </Toolbar.Group>
+          <Toolbar.Group>Last updated: 04/2021</Toolbar.Group>
         </Toolbar>
       </Shelf>
       <Section id="summary" variants={["bright"]}>
